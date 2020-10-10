@@ -13,7 +13,7 @@ const App = () => {
 
   const listOfItems = () => {
     setItems((oldItems) => {
-      console.log('oldItems: ', oldItems);
+      // console.log('oldItems: ', oldItems);
       return [...oldItems, inputList];
     });
 
@@ -21,13 +21,12 @@ const App = () => {
   };
 
   const deleteItems = (id) => {
-    setItems((oldItems)=> {
-      return oldItems.filter((arrElement, index)=> {
+    setItems((oldItems) => {
+      return oldItems.filter((arrElement, index) => {
         return index !== id;
       });
     });
-    console.log('deleted');
-};
+  };
 
   return (
     <>
@@ -46,9 +45,9 @@ const App = () => {
           <ol>
             {items.map((itemValue, ind) => {
               return <ToDoLists key={ind}
-                                id={ind}
-                                text={itemValue}
-                                onSelect={deleteItems} />
+                id={ind}
+                text={itemValue}
+                onSelect={deleteItems} />
             })}
           </ol>
         </div>
